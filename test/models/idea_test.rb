@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class IdeaTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should validate_presence_of(:title)
+  should validate_presence_of(:body)
+  should validate_presence_of(:quality)
 end
