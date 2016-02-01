@@ -8,6 +8,11 @@ class Api::V1::IdeasController < ApplicationController
   def show
   end
 
+  def create
+    respond_with Idea.create(idea_params), location: nil
+  end
+
+  #destory, update#
 
   private
 
