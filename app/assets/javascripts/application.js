@@ -16,10 +16,12 @@
 //= require semantic-ui
 //= require index
 //= require add
+//= require delete
 //= require_tree .
 
 
 $(document).ready(function(){
   fetchAllIdeas();
   inputSubmitListener();
+  deleteIdeaListener();
 })
