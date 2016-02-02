@@ -6,12 +6,12 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def show
-    @idea = Idea.find(params[:id])
-    respond_with @idea
+    respond_with Idea.find_by(id: params[:id])
   end
 
   def create
-    respond_with Idea.create(idea_params), location: nil
+    idea = Idea.create(idea_params)
+    respond_with idea, location: [:api, :v1, idea] if idea.save
   end
 
   def update
