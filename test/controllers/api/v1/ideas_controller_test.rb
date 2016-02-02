@@ -35,5 +35,12 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     end
   end
 
+  test "#delete" do
+    idea = Idea.create!(title: "test idea", body: "test desc", quality: 2)
+
+    assert_difference 'Idea.count', -1 do
+      get :destroy, id: idea.id, format: :json
+    end
+  end
 
 end

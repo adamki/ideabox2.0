@@ -14,7 +14,12 @@ class Api::V1::IdeasController < ApplicationController
     respond_with Idea.create(idea_params), location: nil
   end
 
-  #destory, update#
+  def update
+  end
+
+  def destroy
+    respond_with Idea.find(params[:id]).delete
+  end
 
   private
 
