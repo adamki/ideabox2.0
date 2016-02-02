@@ -15,9 +15,11 @@
 //= require turbolinks
 //= require semantic-ui
 //= require index
+//= require add
 //= require_tree .
 
 
 $(document).ready(function(){
   fetchAllIdeas();
+  inputSubmitListener();
 })

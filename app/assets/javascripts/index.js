@@ -12,7 +12,8 @@ function fetchAllIdeas(){
     url: 'api/v1/ideas',
     success: function(ideas){
       $.each(ideas, function(index, idea){
-        renderIdea(idea)
+        var html = buildHtml(idea)
+        renderIdea(html)
       })
     }, 
     error: function(xhr){
@@ -21,19 +22,22 @@ function fetchAllIdeas(){
   })
 }
 
-function renderIdea(idea){
-  $("#recent-ideas").append(
-    "<div class='item' data-id='"
-    + idea.id
-    + "'><div class='content><a class='header'>"
-    + idea.title
-    + "</a>"
-    + "<div class='description'>"
-    + idea.body.trunc(100, true)
-    + "</div><div class='description'>"
-    + idea.quality 
-    + "<button id='delete-post' name='button-fetch' class='btn btn-default btn-xs'>Delete</button>"
-    + "</div>"
-    + "</div>"
-  )
+function renderIdea(html){
+  $("#recent-ideas").prepend(html);
+}
+
+function buildHtml(idea){
+  return "<div class='item' data-id='"
+          + idea.id
+          + "'><div class='content><a class='header'>"
+          + idea.title
+          + "</a>"
+          + "<div class='description'>"
+          + idea.body.trunc(100, true)
+          + "</div>"
+          + "<div class='description'>"
+          + idea.quality 
+          + "</div>"
+          + "</div>"
+          + "<button id='delete-idea'>Delete</button>";
 }
