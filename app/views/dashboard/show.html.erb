@@ -1,9 +1,12 @@
-<ul>
-  <% @ideas.each do |idea| %>
-    <li>
-      <%= idea.title %>
-      <%= idea.body %>
-      <%= idea.quality %>
-    </li>
-  <% end %>
-</ul>
+<div class="ui grid">
+  <div class="four wide column">
+    <%= render partial: "search" %>
+    <%= render partial: "new_form" %>
+  </div>
+
+  <div class="twelve wide column">
+    <div class="ui relaxed divided item list" id="recent-ideas">
+    </div>
+  </div>
+</div>
+

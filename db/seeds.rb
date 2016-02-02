@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 3.times do
-  Idea.create(title: Faker::Lorem.word, body: Faker::Hipster.sentence(3))
+  Idea.create(title: Faker::Lorem.word, body: Faker::Hipster.sentence(105))
 end
 
 3.times do
-  Idea.create(title: Faker::Lorem.word, body: Faker::Hipster.sentence(3), quality: 1)
+  Idea.create(title: Faker::Lorem.word, body: Faker::Hipster.sentence(105), quality: 1)
 end
 
 3.times do
-  Idea.create(title: Faker::Lorem.word, body: Faker::Hipster.sentence(3), quality: 2)
+  Idea.create(title: Faker::Lorem.word, body: Faker::Hipster.sentence(105), quality: 2)
 end
