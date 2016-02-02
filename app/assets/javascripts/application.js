@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require semantic-ui
+//= require index
 //= require_tree .
+
+
+$(document).ready(function(){
+  fetchAllIdeas();
+})

@@ -3,5 +3,5 @@ class Idea < ActiveRecord::Base
   validates :body, presence: :true
   validates :quality, presence: :true
   enum quality: %w(swill plausible genius)
-  scope :most_recent, -> {order(:created_at).reverse_order}
+  scope :most_recent, -> { order(:created_at).reverse_order }
 end
