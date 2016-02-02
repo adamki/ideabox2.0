@@ -22,7 +22,7 @@ function renderIdea(idea){
     + "</a>"
     + "<div class='description'>"
     + idea.body
-    + "</div>div class='description'>"
+    + "</div><div class='description'>"
     + idea.quality
     + "<button id='delete-post' name='button-fetch' class='btn btn-default btn-xs'>Delete</button>"
     + "</div>"
