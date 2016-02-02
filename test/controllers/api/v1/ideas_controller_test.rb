@@ -1,12 +1,20 @@
 require 'test_helper'
 
 class Api::V1::IdeasControllerTest < ActionController::TestCase
+
   test "#index" do
     idea_count = Idea.count
     get :index, format: :json
 
     assert_response :success
     assert_equal idea_count, json_response.count
+  end
+
+  test "#index returns an Array of Ideas" do
+    get :index, format: :json
+
+    assert_response :success
+    assert_kind_of Array, json_response
   end
 
   test "#show" do
