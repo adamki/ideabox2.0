@@ -10,7 +10,7 @@ Throughout the project, one of my focuses will be on providing a fluid and respo
 
 
 
-* Architecture
+*Architecture*
 
 I will be treating the Client and Server as two seperate entities. To do this: 
 
