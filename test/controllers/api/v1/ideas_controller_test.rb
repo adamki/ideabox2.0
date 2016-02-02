@@ -35,6 +35,19 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     end
   end
 
+  test "#udpate returns changed Idea" do
+    idea = Idea.create!(title: "test idea", body: "test desc", quality: 2)
+    params = {title: "new idea", body: "new desc", quality: 1}
+    put :update, id: idea, idea: params, format: :json
+
+    assert_response :no_content
+
+    get :show, id: idea.id, format: :json
+    assert_equal "new idea", json_response["title"]
+    assert_equal "new desc", json_response["body"]
+    assert_equal "plausible", json_response["quality"]
+  end
+
   test "#delete" do
     idea = Idea.create!(title: "test idea", body: "test desc", quality: 2)
 
