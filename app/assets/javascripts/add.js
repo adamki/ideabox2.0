@@ -1,4 +1,4 @@
-function inputSubmitListener(){
+function addIdeaListener(){
   $("#add-idea").on('click', function(){
     var title = $(".field input").val();
     var body  = $(".field textarea").val();
@@ -24,6 +24,7 @@ function addIdea(params){
     },
     error: function(xhr){
       console.log(xhr.responseText);
+      clearForm();
     }
   })
 }
