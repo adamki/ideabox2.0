@@ -10,7 +10,7 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def create
-    idea = Idea.create(idea_params)
+    idea = Idea.create!(idea_params)
     respond_with idea, location: [:api, :v1, idea] if idea.save
   end
 
