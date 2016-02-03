@@ -27,17 +27,18 @@ function renderIdea(html){
 }
 
 function buildHtml(idea){
-  return "<div class='item' data-id='"
+  return "<div class='idea' data-id='"
           + idea.id
-          + "'><div class='content><a class='header'>"
+          + "'><div class='content'><a id='ideaTitle' class='header-description' contenteditable='true'>"
           + idea.title
           + "</a>"
-          + "<div class='description'>"
+          + "<div id='ideaBody' contentEditable='true' class='body description'>"
           + idea.body.trunc(100, true)
           + "</div>"
           + "<div class='description'>"
           + idea.quality 
           + "</div>"
           + "</div>"
-          + "<button id='delete-idea'>Delete</button>";
+          + "<button id='delete-idea'>Delete</button>"
+          + "<button id='edit-idea'>Edit</button>"
 }

@@ -17,7 +17,7 @@ class Api::V1::IdeasController < ApplicationController
   def update
     idea = Idea.find_by(id: params[:id])
     if idea.update(idea_params)
-      respond_with nil, location: [:api, :v1, idea]
+      respond_with idea, json: idea, location: [:api, :v1, idea]
     end
   end
 

@@ -12,16 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require semantic-ui
 //= require index
 //= require add
 //= require delete
+//= require update
 //= require_tree .
 
 
 $(document).ready(function(){
   fetchAllIdeas();
-  inputSubmitListener();
+  addIdeaListener();
   deleteIdeaListener();
+  editIdeaListener();
 })
