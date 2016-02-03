@@ -29,7 +29,7 @@ function renderIdea(html){
 function buildHtml(idea){
   return "<div class='idea' data-id='"
           + idea.id
-          + "'><div class='content'><a class='header-description' contenteditable='true'>"
+          + "'><div class='content'><a id='idea' class='header-description' contenteditable='true'>"
           + idea.title
           + "</a>"
           + "<div contentEditable='true' class='body description'>"

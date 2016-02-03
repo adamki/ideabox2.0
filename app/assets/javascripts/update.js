@@ -1,34 +1,30 @@
 function editIdeaListener(){
-
-  $('#recent-ideas').delegate('.header-description', 'keyup', function(){
-    alert("fdsa")
-  });
+  editTitle();
 }
 
 function editTitle(){
-  $('.header-description').keydown(function(event){
-    debugger
-    if(event.keyCode == 13){
+  $('#recent-ideas').delegate('#idea', 'keydown', function(event){
+    if(event.which == 13 || event.keyCode == 13){
+      var $title = event.currentTarget.textContent
+      var $body  = $(this).siblings('.body.description')[0].innerHTML
+      var $id    = $(this).closest('.idea').attr('data-id')
+      var params = {
+        idea: {
+          title: $title,
+          body: $body
+        }
+      }
 
-
-      //var $title = event.currentTarget.textContent
-      //var $idea = $(this).closest('li.collection-item.idea')
-      //var $id = $(this).closest('li').attr('data-id')
-      //var ideaParams = {
-        //idea: {
-          //title: $title
-        //}
-      //}
-
+    event.preventDefault();
       $.ajax({
         type: 'PUT',
         url: '/api/v1/ideas/' + $id + '.json',
-        data: ideaParams,
+        data: params,
         success: function(idea){
-          $(event.target).blur();
-          updateTitle($idea, idea.title);
+          renderIdea(idea);
         }
       })
     }
   })
 }
+

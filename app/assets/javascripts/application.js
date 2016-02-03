@@ -21,8 +21,8 @@
 
 
 $(document).ready(function(){
-  $('[contenteditable]').on('click', function(e){ alert(e)})
   fetchAllIdeas();
   addIdeaListener();
   deleteIdeaListener();
+  editIdeaListener();
 })
