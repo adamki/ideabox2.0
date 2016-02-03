@@ -16,6 +16,7 @@ function editTitle(){
       }
 
     event.preventDefault();
+    this.blur();
       $.ajax({
         type: 'PUT',
         url: '/api/v1/ideas/' + $id + '.json',
@@ -41,6 +42,7 @@ function editBody(){
       }
 
     event.preventDefault();
+    this.blur();
       $.ajax({
         type: 'PUT',
         url: '/api/v1/ideas/' + $id + '.json',
