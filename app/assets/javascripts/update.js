@@ -12,7 +12,6 @@ function editTitle(){
       var params = {
         idea: {
           title: $title,
-          body: $body
         }
       }
 
@@ -37,7 +36,6 @@ function editBody(){
       var $id    = $(this).closest('.idea').attr('data-id')
       var params = {
         idea: {
-          title: $title,
           body: $body
         }
       }
