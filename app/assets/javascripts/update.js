@@ -7,7 +7,7 @@ function editTitle(){
   $('#recent-ideas').delegate('#ideaTitle', 'keydown', function(event){
     if(event.which == 13 || event.keyCode == 13){
       var $title = event.currentTarget.textContent
-      var $body  = $(this).siblings('.body.description')[0].innerHTML
+      var $body  = $(this).siblings('.body-description')[0].innerHTML
       var $id    = $(this).closest('.idea').attr('data-id')
       var params = {
         idea: {

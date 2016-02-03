@@ -17,6 +17,7 @@
 //= require add
 //= require delete
 //= require update
+//= require quality
 //= require_tree .
 
 
@@ -24,5 +25,4 @@ $(document).ready(function(){
   fetchAllIdeas();
   addIdeaListener();
   deleteIdeaListener();
-  editIdeaListener();
 })

@@ -48,7 +48,7 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     params = {title: "new idea", body: "new desc", quality: 1}
     put :update, id: idea, idea: params, format: :json
 
-    assert_response :no_content
+    assert_response :success
 
     get :show, id: idea.id, format: :json
     assert_equal "new idea", json_response["title"]
