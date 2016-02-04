@@ -21,6 +21,7 @@ function addIdea(params){
       var html = buildHtml(idea)
       renderIdea(html);
       clearForm();
+      qualityListener();
     },
     error: function(xhr){
       console.log(xhr.responseText);
