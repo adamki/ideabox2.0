@@ -43,8 +43,8 @@ function buildHtml(idea){
           + "</div>"
           + "<i id='raise-quality' class='thumbs up icon'></i>"
           + "<i id='lower-quality' class='thumbs down icon'></i>"
+          + "<i class='remove icon red' id='delete-idea'></i>"
           + "<br>"
           + "<br>"
-          + "<button id='delete-idea'>Delete</button>"
           + "<br>"
 }
