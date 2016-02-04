@@ -13,12 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require semantic-ui
-//= require index
-//= require add
-//= require delete
-//= require update
-//= require quality
-//= require search
 //= require_tree .
 
 

@@ -4,11 +4,14 @@
   padding: 15px;
 }
 
-.four.wide.column {
+.ui.form {
+  padding: 15px;
   background-color: lightgrey;
 }
 .invisible{
   display: none;
 }
 
-
+.thumbs.up, .thumbs.down{
+  cursor: pointer; cursor: hand; 
+}
