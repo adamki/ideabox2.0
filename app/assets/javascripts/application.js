@@ -18,6 +18,7 @@
 //= require delete
 //= require update
 //= require quality
+//= require search
 //= require_tree .
 
 
@@ -25,4 +26,5 @@ $(document).ready(function(){
   fetchAllIdeas();
   addIdeaListener();
   deleteIdeaListener();
+  searchIdeasListener();
 })
