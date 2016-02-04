@@ -3,6 +3,21 @@ function editIdeaListener(){
   editBody();
 }
 
+var sendAjax = function(params, $id, $idea){
+  $.ajax({
+    type: 'PUT',
+    url: '/api/v1/ideas/' + $id + '.json',
+    data: params,
+    success: function(idea){
+      renderIdea(idea);
+      updateQuality(idea, $idea)
+    },
+    error: function(xhr){
+      console.log(xhr.responseText); 
+    }
+  })
+}
+
 function editTitle(){
   $('#recent-ideas').delegate('#ideaTitle', 'keydown', function(event){
     if(event.which == 13 || event.keyCode == 13){
@@ -14,17 +29,9 @@ function editTitle(){
           title: $title,
         }
       }
-
-    event.preventDefault();
-    this.blur();
-      $.ajax({
-        type: 'PUT',
-        url: '/api/v1/ideas/' + $id + '.json',
-        data: params,
-        success: function(idea){
-          renderIdea(idea);
-        }
-      })
+      event.preventDefault();
+      this.blur();
+      sendAjax(params, $id);
     }
   })
 }
@@ -40,17 +47,9 @@ function editBody(){
           body: $body
         }
       }
-
-    event.preventDefault();
-    this.blur();
-      $.ajax({
-        type: 'PUT',
-        url: '/api/v1/ideas/' + $id + '.json',
-        data: params,
-        success: function(idea){
-          renderIdea(idea);
-        }
-      })
+      event.preventDefault();
+      this.blur();
+      sendAjax(params, $id)
     }
   })
 }
