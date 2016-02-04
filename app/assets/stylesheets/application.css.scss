@@ -1,6 +1,14 @@
 @import "semantic-ui";
 
+.ui.grid {
+  padding: 15px;
+}
 
+.four.wide.column {
+  background-color: lightgrey;
+}
 .invisible{
   display: none;
 }
+
+
